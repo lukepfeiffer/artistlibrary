@@ -1,2 +1,10 @@
-%h1
-  home
+%div
+  - if current_user.present?
+    %ul
+      = current_user.username
+      = link_to 'Sign Out', sign_out_path, method: :delete
+  - else
+    = link_to 'Sign Up', sign_up_path
+    = link_to 'What is this site?', about_path
+%div
+
