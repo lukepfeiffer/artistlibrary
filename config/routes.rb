@@ -1,10 +1,10 @@
 Artistlibrary::Application.routes.draw do
   resources :users
+  resources :images
 
   root 'pages#home'
 
   get '/sign_up', to: 'pages#sign_up'
-  get '/about', to: 'pages#about'
 
 
   post 'sessions', to: 'sessions#create'

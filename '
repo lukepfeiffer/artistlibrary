@@ -15,7 +15,7 @@
       = f.password_field :password_confirmation
 
       = f.label :bio
-      = f.text_area :bio, placeholder: 'A little about you'
+      = f.text_area :bio
 
       =f.submit
   %div.sign_in

@@ -1,0 +1,14 @@
+%div.username
+  = @user.username
+  = link_to 'Sign Out', sign_out_path, method: :delete, id: 'sign_out'
+%div.view_images
+  = link_to 'Add Picture', new_image_path, class: 'add'
+  - @images.each do |image|
+    - if image.present?
+      = image_tag image.url
+      %ul
+        = image.description
+      %ul
+        %p
+          Tags:
+          = image.tag

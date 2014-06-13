@@ -1,3 +1,73 @@
 #main{
   background-color: #ccc;
+  font-family: arial;
+}
+
+a{
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: #31b531;
+  color: #000;
+  padding: 3px;
+  font-size: 20px;
+  text-decoration:  none;
+}
+
+.sign_up{
+  float: left;
+}
+
+.sign_in{
+  float: right;
+}
+
+.field_holder{
+  width: 45%;
+}
+
+input{
+  display: list-item;
+  border-radius: 4px;
+  font-size: 17px;
+  margin: 3px 0;
+  padding: 0 3px;
+}
+
+textarea{
+  display: list-item;
+  border-radius: 4px;
+  font-size: 17px;
+  margin: 3px 0;
+  padding: 0 3px;
+  height: 60px;
+}
+
+p{
+  margin: 0 0 5px 0;
+  font-size: 28px;
+}
+
+.view_images{
+  display: list-item;
+}
+
+.add{
+  background-color: #224bc7;
+  font-size: 15px;
+  border: none;
+}
+
+.username{
+  border: 1px solid black;
+  width: 200px;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+#sign_out{
+  color: #000;
+  background-color: #d61515;
+  font-size: 15px;
+  border: none;
+
 }

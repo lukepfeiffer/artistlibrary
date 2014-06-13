@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'authem'
+gem 'nested_form'
 gem 'haml-rails'
 gem 'rails', '4.0.0'
 gem 'sqlite3'
