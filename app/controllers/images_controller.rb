@@ -18,6 +18,11 @@ class ImagesController < ApplicationController
     end
   end
 
+  def destroy
+    @image = Image.find(params[:id]).destroy
+    redirect_to images_path
+  end
+
   def image_params
     params.require(:image).permit(
       :url,

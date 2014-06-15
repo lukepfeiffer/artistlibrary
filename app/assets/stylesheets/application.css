@@ -16,20 +16,6 @@ a{
   border-radius: 2px;
 }
 
-.sign_up{
-  float: left;
-}
-
-.sign_in{
-  float: right;
-}
-
-.field_holder{
-  width: 45%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 input{
   display: list-item;
   border-radius: 4px;
@@ -49,18 +35,34 @@ textarea{
   width: 200px;
 }
 
+img{
+  width: 200px;
+  height: 200px;
+}
+
 p{
   margin: 0 0 5px 0;
   font-size: 12px;
 }
 
-.view_images{
-  text-align: center;
+.sign_up{
+  float: left;
+}
+
+.sign_in{
+  float: right;
+}
+
+.field_holder{
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .image{
   float: left;
   width: 200px;
+  height: 20%;
   margin: 3px;
   border: 1px solid #c5c5c5;
 }
@@ -81,6 +83,7 @@ p{
   margin-right: 2px;
   margin-left: auto;
   margin-top: 0;
+  margin-bottom: 3px;
   border: 1px solid #c5c5c5;
   height: 100px;
 }
@@ -91,10 +94,17 @@ p{
 
 .description{
   font-size: 15px;
+  padding: 4px;
 }
 
 .enter{
   width: 100px;
+}
+
+.delete{
+  background-color: #bf1128;
+  padding: 3px;
+  border: none;
 }
 
 .text{
@@ -118,10 +128,6 @@ p{
   border: none;
   padding: 0 4px;
   text-decoration: underline;
-}
-
-#image_url{
-  width: 200px;
 }
 
 #new_picture{

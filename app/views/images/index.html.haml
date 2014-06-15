@@ -11,11 +11,11 @@
   - @images.reverse_each do |image|
     - if image.present?
       %div.image
-        %span#image_url
-          = image_tag image.url
+        = link_to image_tagaimage.url, class: 'image_url'
         %ul.description
           = image.description
           %p
             Tags:
             %span#tag
               = image.tag
+          = link_to 'Delete Image', image_path(image), method: :delete, class: 'delete'
