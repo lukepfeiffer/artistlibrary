@@ -12,6 +12,9 @@ class UsersController < ApplicationController
   def index
   end
 
+  def edit
+  end
+
   def user_params
     params.require(:user).permit(
       :email,

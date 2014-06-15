@@ -5,6 +5,7 @@ class ImagesController < ApplicationController
   end
 
   def new
+    @user = current_user
     @image = Image.new
   end
 

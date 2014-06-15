@@ -1,5 +1,15 @@
-%div
-  Add Picture
+%div.username
+  %ul.user_info
+    = @user.username
+  %ul.user_info
+    = @user.bio
+  %div.username_holder
+    = link_to 'Sign Out', sign_out_path, method: :delete, id: 'sign_out'
+    = link_to 'Add Picture', new_image_path, class: 'add'
+
+%div.field_holder#new_picture
+  %span#add_picture
+    Add Picture
   = form_for(@image) do |f|
     = f.label :url
     = f.text_area :url, placeholder: 'Image Url'
@@ -10,4 +20,4 @@
     = f.label :tag
     = f.text_field :tag, placeholder: 'Image Tag'
 
-    = f.submit
+    = f.submit 'Add Image', class: 'enter'
