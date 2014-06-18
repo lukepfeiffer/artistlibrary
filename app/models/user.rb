@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
-  include Authem::User
+  class User < ActiveRecord::Base
+    include Authem::User
   has_many :images
 end

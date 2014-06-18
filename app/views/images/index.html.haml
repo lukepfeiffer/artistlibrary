@@ -1,21 +1,12 @@
-%div.username
-  %ul.user_info
-    = @user.username
-  %ul.user_info
-    = @user.bio
-  %div.username_holder
-    = link_to 'Sign Out', sign_out_path, method: :delete, id: 'sign_out'
-    = link_to 'Add Picture', new_image_path, class: 'add'
-
-%div.view_images
+%div
   - @images.reverse_each do |image|
     - if image.present?
-      %div.image
-        = link_to image_tagaimage.url, class: 'image_url'
+      %div.view_image
+        = link_to image_tag image.url, class: 'image_url'
         %ul.description
           = image.description
           %p
             Tags:
             %span#tag
               = image.tag
-          = link_to 'Delete Image', image_path(image), method: :delete, class: 'delete'
+          = link_to 'Delete Image', image_path(image), method: :delete, class: 'anchor', id: 'delete'

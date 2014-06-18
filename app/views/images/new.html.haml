@@ -1,12 +1,3 @@
-%div.username
-  %ul.user_info
-    = @user.username
-  %ul.user_info
-    = @user.bio
-  %div.username_holder
-    = link_to 'Sign Out', sign_out_path, method: :delete, id: 'sign_out'
-    = link_to 'Add Picture', new_image_path, class: 'add'
-
 %div.field_holder#new_picture
   %span#add_picture
     Add Picture

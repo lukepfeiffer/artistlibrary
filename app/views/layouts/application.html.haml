@@ -1,0 +1,31 @@
+%head
+  %title Artistlibrary
+  = stylesheet_link_tag    "application", media: "all"
+  = javascript_include_tag "application"
+  = csrf_meta_tags
+- if current_user.present?
+  %div.header
+    %div.search
+      = form_tag(images_path) do
+        %span#search
+        = text_field_tag :tag, nil, placeholder: 'Search For Tags', id: 'search_bar'
+        = submit_tag 'Search', class: 'search_button'
+
+    %table
+      %td
+        = link_to 'Recent Additions', other_images_path
+      %td
+        = link_to 'Look for people', users_path
+      %td
+        = link_to 'Add Picture', new_image_path, class: 'anchor', id: 'add'
+
+    %div.username
+      %ul.user_info
+        = link_to @user.username, images_path
+      %ul.user_info
+        = @user.bio
+      %div.username_holder
+        = link_to 'Sign Out', sign_out_path, method: :delete, id: 'sign_out'
+
+%body#main
+  = yield

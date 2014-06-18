@@ -3,9 +3,11 @@
     %p.text Sign Up Here
     = form_for(@user) do |f|
       = f.label :email
-      = f.text_field :email, placeholder: 'email@example.com'
+      (not shown)
+      = f.text_field :email
 
       = f.label :username
+      (required)
       = f.text_field :username
 
       = f.label :password

@@ -10,6 +10,9 @@ class UsersController < ApplicationController
   end
 
   def index
+    @user = current_user
+    @other_user = User.all
+    @images = Image.all
   end
 
   def edit
