@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @user = current_user
   end
 
   def sign_up
@@ -9,9 +10,7 @@ class PagesController < ApplicationController
   def other_images
     @user = current_user
     @users = User.all
-    @image = Image.all
+    @image = Image.last
   end
 
-  def about
-  end
 end

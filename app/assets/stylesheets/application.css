@@ -46,6 +46,10 @@ p{
   font-size: 12px;
 }
 
+ul{
+  margin: 0;
+}
+
 .sign_up{
   float: left;
 }
@@ -69,11 +73,19 @@ p{
   border: 1px solid #c5c5c5;
 }
 
+.other_image{
+  width: 200px;
+}
+
 #add{
   float: left;
   background-color: #224bc7;
   font-size: 15px;
   border: none;
+}
+
+#center_p{
+  text-align: center;
 }
 
 .username{

@@ -1,17 +1,9 @@
-%div.username
-  %ul.user_info
-    = link_to @user.username, images_path
-  %ul.user_info
-    = @user.bio
-  %div.username_holder
-    = link_to 'Sign Out', sign_out_path, method: :delete, id: 'sign_out'
-
 - @users.each do |users|
-  %table
-    %td
+  %div.other_image
+    %p#center_p
       = users.username
-    %td
-      = users.bio
-    %td
-      - @image.each do |image|
-        = image_tag image.url
+      %ul
+        %p
+          = users.bio
+      %div
+        = image_tag @image.url

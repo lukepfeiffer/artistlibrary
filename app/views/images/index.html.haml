@@ -1,8 +1,12 @@
 %div
+  = link_to 'Date Created', sort: :url
+%div
   - @images.reverse_each do |image|
     - if image.present?
       %div.view_image
         = link_to image_tag image.url, class: 'image_url'
+        %p
+          = link_to 'Full Size Image', image.url
         %ul.description
           = image.description
           %p

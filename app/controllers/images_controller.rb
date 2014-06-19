@@ -1,7 +1,7 @@
 class ImagesController < ApplicationController
   def index
     @user = current_user
-    @images = Image.all
+    @images = Image.order(params[:sort])
   end
 
   def new
