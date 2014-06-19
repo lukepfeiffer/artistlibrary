@@ -37,7 +37,7 @@ textarea{
 }
 
 img{
-  width: 200px;
+  width: 180px;
   height: 200px;
 }
 
@@ -65,10 +65,9 @@ ul{
 }
 
 .view_image{
-  float: left;
   padding: 10px;
-  width: 200px;
-  height: 20%;
+  width: 180px;
+  float: left;
   margin:  9px 0 0 9px;
   border: 1px solid #c5c5c5;
 }
@@ -116,9 +115,6 @@ ul{
   width: 100px;
 }
 
-.search{
-  float: left;
-}
 .text{
   font-size: 17px;
   border: 1px solid #c5c5c5;
@@ -128,7 +124,7 @@ ul{
 .search_button{
   background-color: #fa2;
   margin-right: auto;
-  margin-left: auto;
+  margin-left: 90px;
   font-weight: 700;
   border-radius: 8px;
   border: 1px solid #fa2;
@@ -136,6 +132,26 @@ ul{
   height: 28px;
   font-size: 22px;
   color: #333;
+}
+
+.previous_page.disabled{
+  color: #333d07;
+}
+
+.next_page.disabled{
+  color: #333d07;
+}
+
+.current{
+  color: #000;
+}
+
+.previous_page{
+  color: #0505b3;
+}
+
+.next_page{
+  color: #0505b3;
 }
 
 #delete{

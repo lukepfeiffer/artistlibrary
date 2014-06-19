@@ -1,7 +1,8 @@
 %div
   - @other_user.each do |user|
     %div
-      = user.username
-      = user.bio
-      - @images.each do |image|
-        = image_tag image.url
+      %ul
+        = user.username
+      %p
+        = user.bio
+      = image_tag @image.url

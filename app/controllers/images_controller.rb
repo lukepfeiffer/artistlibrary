@@ -1,7 +1,11 @@
 class ImagesController < ApplicationController
   def index
     @user = current_user
-    @images = Image.order(params[:sort])
+    if params[:tag].present?
+      @images = Image.where(tag: params[:tag]).paginate(page: params[:page], per_page: '12')
+    else
+      @images = Image.paginate(page: params[:page], per_page: '12')
+    end
   end
 
   def new

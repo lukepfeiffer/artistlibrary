@@ -5,17 +5,9 @@
   = csrf_meta_tags
 - if current_user.present?
   %div.header
-    %div.search
-      = form_tag(images_path) do
-        %span#search
-        = text_field_tag :tag, nil, placeholder: 'Search For Tags', id: 'search_bar'
-        = submit_tag 'Search', class: 'search_button'
-
     %table
       %td
         = link_to 'Recent Additions', other_images_path
-      %td
-        = link_to 'Look for people', users_path
       %td
         = link_to 'Add Picture', new_image_path, class: 'anchor', id: 'add'
 

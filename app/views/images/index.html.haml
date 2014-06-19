@@ -1,5 +1,9 @@
-%div
-  = link_to 'Date Created', sort: :url
+%div.search
+  = form_tag(images_path) do
+    %span#search
+    = text_field_tag :tag, nil, method: :get, placeholder: 'Search For Tags', id: 'search_bar'
+    = submit_tag 'Search', class: 'search_button'
+
 %div
   - @images.reverse_each do |image|
     - if image.present?
@@ -14,3 +18,4 @@
             %span#tag
               = image.tag
           = link_to 'Delete Image', image_path(image), method: :delete, class: 'anchor', id: 'delete'
+= will_paginate @images

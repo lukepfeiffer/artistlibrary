@@ -11,8 +11,7 @@ class UsersController < ApplicationController
 
   def index
     @user = current_user
-    @other_user = User.all
-    @images = Image.all
+    @image = Image.last
   end
 
   def edit
