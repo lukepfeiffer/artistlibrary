@@ -9,8 +9,6 @@ class PagesController < ApplicationController
 
   def other_images
     @user = current_user
-    @users = User.all
-    @image = Image.last
+    @image = Image.find(:all, order: :id, limit: '12').reverse
   end
-
 end

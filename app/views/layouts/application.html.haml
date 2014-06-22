@@ -5,19 +5,16 @@
   = csrf_meta_tags
 - if current_user.present?
   %div.header
-    %table
-      %td
-        = link_to 'Recent Additions', other_images_path
-      %td
-        = link_to 'Add Picture', new_image_path, class: 'anchor', id: 'add'
+    %ul
+      = link_to @user.username, images_path, id: 'username_link'
+    %ul
+      = @user.bio
+    %ul
+      = link_to 'Sign Out', sign_out_path, method: :delete, id: 'sign_out'
 
-    %div.username
-      %ul.user_info
-        = link_to @user.username, images_path
-      %ul.user_info
-        = @user.bio
-      %div.username_holder
-        = link_to 'Sign Out', sign_out_path, method: :delete, id: 'sign_out'
+    %div.header_link
+      = link_to 'All Pictures', other_images_path, class: 'anchor', id: 'recent'
+      = link_to 'Add Picture', new_image_path, class: 'anchor', id: 'add'
 
 %body#main
   = yield

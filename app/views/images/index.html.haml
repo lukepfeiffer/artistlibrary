@@ -1,21 +1,21 @@
 %div.search
-  = form_tag(images_path) do
+  = form_tag(images_path, method: :get) do
     %span#search
-    = text_field_tag :tag, nil, method: :get, placeholder: 'Search For Tags', id: 'search_bar'
+    = text_field_tag :tag, nil, placeholder: 'Search For Tags', id: 'search_bar'
     = submit_tag 'Search', class: 'search_button'
 
 %div
   - @images.reverse_each do |image|
     - if image.present?
       %div.view_image
-        = link_to image_tag image.url, class: 'image_url'
+        = image_tag image.url, class: 'image_url'
         %p
           = link_to 'Full Size Image', image.url
         %ul.description
           = image.description
           %p
             Tags:
-            %span#tag
+            %span.tag
               = image.tag
           = link_to 'Delete Image', image_path(image), method: :delete, class: 'anchor', id: 'delete'
 = will_paginate @images

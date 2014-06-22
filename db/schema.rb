@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140615222609) do
+ActiveRecord::Schema.define(version: 20140622182743) do
 
   create_table "images", force: true do |t|
     t.text     "url"
@@ -27,13 +27,14 @@ ActiveRecord::Schema.define(version: 20140615222609) do
   end
 
   create_table "users", force: true do |t|
-    t.string "email"
-    t.string "username"
-    t.string "password_digest"
-    t.string "remember_token"
-    t.string "reset_password_token"
-    t.string "session_token"
-    t.text   "bio"
+    t.string  "email"
+    t.string  "username"
+    t.string  "password_digest"
+    t.string  "remember_token"
+    t.string  "reset_password_token"
+    t.string  "session_token"
+    t.text    "bio"
+    t.integer "image_id"
   end
 
 end
