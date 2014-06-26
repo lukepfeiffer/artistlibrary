@@ -1,7 +1,7 @@
 class ImagesController < ApplicationController
   def index
     if params[:tag].present?
-      @images = current_user.images.where(tag: params[:tag]).paginate(page: params[:page], per_page: '12')
+      @images = current_user.images.joins(:tags).where('tags.name = ?',  params[:tag]).paginate(page: params[:page], per_page: '12')
     else
       @images = current_user.images.paginate(page: params[:page], per_page: '12')
     end
@@ -12,7 +12,6 @@ class ImagesController < ApplicationController
     3.times do
       @image.tags.build
     end
-    @tags = @image.tags
   end
 
   def create
@@ -33,8 +32,8 @@ class ImagesController < ApplicationController
     params.require(:image).permit(
       :url,
       :description,
-      :tag,
-      :user_id
+      :user_id,
+      tags_attributes: :name
     )
   end
 end

@@ -17,5 +17,5 @@
           = image.description
           %p
             tags:
-            %span.tag
-              = image.tag
+            - image.tags.each do |tag|
+              %span.tag= tag.name
