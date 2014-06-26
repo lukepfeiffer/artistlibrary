@@ -1,10 +1,10 @@
 %div
-  = form_tag(images_path, method: :get) do
+  = form_tag(other_images_path, method: :get) do
     %span#search
     = text_field_tag :tag, nil, placeholder: 'Search For Tags', id: 'search_bar'
     = submit_tag 'Search', class: 'search_button'
 
-  %p#recently_added
+  %p.p_text
     Recently Added Images:
 
   - @image.each do |image|

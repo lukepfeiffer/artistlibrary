@@ -5,6 +5,8 @@
     = submit_tag 'Search', class: 'search_button'
 
 %div
+  %p.p_text
+    Your Pictures:
   - @images.reverse_each do |image|
     - if image.present?
       %div.view_image

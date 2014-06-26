@@ -7,6 +7,10 @@ class PagesController < ApplicationController
   end
 
   def other_images
-    @image = Image.find(:all, order: :id, limit: '12').reverse
+    if params[:tag].present?
+      @image = Image.where(tag: params[:tag]).paginate(page: params[:page], per_page: '12')
+    else
+      @image = Image.find(:all, order: :id, limit: '12').reverse
+    end
   end
 end

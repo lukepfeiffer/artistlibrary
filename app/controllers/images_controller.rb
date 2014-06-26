@@ -9,6 +9,10 @@ class ImagesController < ApplicationController
 
   def new
     @image = Image.new
+    3.times do
+      @image.tags.build
+    end
+    @tags = @image.tags
   end
 
   def create
