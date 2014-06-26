@@ -1,6 +1,7 @@
 #main{
   background-color: #ccc;
   font-family: arial;
+  margin: 0;
 }
 
 .header{
@@ -9,8 +10,13 @@
   text-align: center;
   margin-top: 0;
   margin-bottom: 3px;
+  background-color: #0b3061;
   border: 1px solid #c5c5c5;
   height: 100px;
+}
+
+.username{
+  float: left;
 }
 
 .header_link{
@@ -19,7 +25,7 @@
 }
 
 #username_link{
-  color: #3156eb;
+  color: #2dafd6;
 }
 
 .anchor{
@@ -37,6 +43,10 @@
 
 .home{
   width: 405px;
+}
+
+.home_page{
+  margin: 0 0 0 8px;
 }
 
 h2{
@@ -80,6 +90,7 @@ p{
 
 ul{
   margin: 0;
+  padding: 0;
 }
 
 .sign_up{
@@ -95,6 +106,10 @@ ul{
   margin-left: auto;
   margin-right: auto;
   border: 1px solid #c5c5c5;
+}
+
+#new_picture{
+  float: left;
 }
 
 .view_image{
@@ -118,13 +133,21 @@ ul{
   width: 83px;
 }
 
+#recently_added{
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 0 8px;
+}
+
 #add:hover{
   background-color: #1b7fcc;
 }
 
 #recent{
   background-color: #32cd32;
+  border-radius: 3px;
   font-size: 12px;
+  padding: 11px;
 }
 
 #recent:hover{
@@ -149,6 +172,7 @@ ul{
 
 .search_button{
   background-color: #fa2;
+  cursor: pointer;
   margin-right: auto;
   margin-left: 90px;
   font-weight: 700;
@@ -180,6 +204,11 @@ ul{
   color: #0505b3;
 }
 
+.user_bio{
+  color: #fff;
+  font-weight: bold;
+}
+
 #delete{
   background-color: #bf1128;
   padding: 3px;
@@ -200,6 +229,8 @@ ul{
   font-size: 15px;
   border: none;
   padding: 0 4px;
+  border-radius: 2px;
+  border: 1px solid black;
   text-decoration: underline;
 }
 

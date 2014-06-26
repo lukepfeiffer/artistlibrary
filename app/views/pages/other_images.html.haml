@@ -4,6 +4,9 @@
     = text_field_tag :tag, nil, placeholder: 'Search For Tags', id: 'search_bar'
     = submit_tag 'Search', class: 'search_button'
 
+  %p#recently_added
+    Recently Added Images:
+
   - @image.each do |image|
     - if image.present?
       %div.view_image

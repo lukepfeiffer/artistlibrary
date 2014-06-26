@@ -1,15 +1,13 @@
 class ImagesController < ApplicationController
   def index
-    @user = current_user
     if params[:tag].present?
-      @images = Image.where(tag: params[:tag]).paginate(page: params[:page], per_page: '12')
+      @images = current_user.images.where(tag: params[:tag]).paginate(page: params[:page], per_page: '12')
     else
-      @images = Image.paginate(page: params[:page], per_page: '12')
+      @images = current_user.images.paginate(page: params[:page], per_page: '12')
     end
   end
 
   def new
-    @user = current_user
     @image = Image.new
   end
 
@@ -31,7 +29,8 @@ class ImagesController < ApplicationController
     params.require(:image).permit(
       :url,
       :description,
-      :tag
+      :tag,
+      :user_id
     )
   end
 end

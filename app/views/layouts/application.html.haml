@@ -5,13 +5,12 @@
   = csrf_meta_tags
 - if current_user.present?
   %div.header
-    %ul
-      = link_to @user.username, images_path, id: 'username_link'
-    %ul
-      = @user.bio
-    %ul
-      = link_to 'Sign Out', sign_out_path, method: :delete, id: 'sign_out'
-
+    %div.username
+      %ul
+        = link_to current_user.username, images_path, id: 'username_link'
+        = link_to 'Sign Out', sign_out_path, method: :delete, id: 'sign_out'
+      %ul.user_bio
+        = current_user.bio
     %div.header_link
       = link_to 'All Pictures', other_images_path, class: 'anchor', id: 'recent'
       = link_to 'Add Picture', new_image_path, class: 'anchor', id: 'add'
