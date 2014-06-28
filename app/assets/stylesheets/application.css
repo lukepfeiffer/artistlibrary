@@ -26,6 +26,8 @@
 
 #username_link{
   color: #2dafd6;
+  font-size: 23px;
+  border-radius: 4px;
 }
 
 .anchor{
@@ -228,10 +230,16 @@ ul{
   color: #000;
   font-size: 15px;
   border: none;
-  padding: 0 4px;
+  padding: 0 8px;
   border-radius: 2px;
   border: 1px solid black;
   text-decoration: underline;
+}
+
+#sign_out:hover{
+  background-color: #c5c5c5;
+  border: 1px solid #fff;
+  color: #fff;
 }
 
 #search_bar{
