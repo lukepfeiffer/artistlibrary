@@ -1,14 +1,14 @@
 %div.search
-  = form_tag(images_path, method: :get) do
-    %span#search
-    = text_field_tag :tag, nil, placeholder: 'Search For Tags', id: 'search_bar'
-    = submit_tag 'Search', class: 'search_button'
+  = text_field_tag :tag, nil, placeholder: 'Search For Tags', id: 'search_bar'
+  = submit_tag 'Search', class: 'search_button'
 
-%div
-  %p.p_text
-    Your Pictures:
-  - @images.each do |image|
-    - if image.present?
+  %div
+    %p.p_text
+      Your Pictures:
+    - if @images.empty?
+      %p.p_text
+        You don't have any images
+    - @images.each do |image|
       %div.view_image
         = image_tag image.url, class: 'image_url'
         %p

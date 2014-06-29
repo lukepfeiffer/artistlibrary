@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
       sign_in(user)
       redirect_to images_path
     else
-      redirect_to sign_up_path
+      redirect_to root_path
     end
   end
 

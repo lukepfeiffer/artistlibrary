@@ -1,16 +1,47 @@
-%div.home_page
-  = link_to 'Sign Up', sign_up_path, class: 'anchor'
+%div.home
   %h1 Artist Library
-  %div.home This is a site to store pictures that you like from and online source without downloading the image
-%div.home_page
-  %h2 Features:
-  %li Take pictures from an online source and post them
-  %li Click on your username to return to your profile
-  %li View recently posted images
-  %li Search for tags
+  %div.home_page
+    %div This is a site to store pictures that you like from and online source without downloading the image
+    %h2 Features:
+    %li Take pictures from an online source and post them
+    %li Click on your username to return to your profile
+    %li View recently posted images
+    %li Search for tags
+    %h2 Usage
+    %li Copy the images url
+    %li Paste it into the 'Add Picture' form
+    %li BAM! All done!
 
-%div.home_page
-  %h2 Usage
-  %li Copy the images url
-  %li Paste it into the 'Add Picture' form
-  %li BAM! All done!
+%div.field_holder
+  %div
+    %p.text Sign Up Here
+    = form_for(@user) do |f|
+      = f.label :email
+      (not shown)
+      = f.text_field :email
+
+      = f.label :username
+      (required)
+      = f.text_field :username
+
+      = f.label :password
+      = f.password_field :password
+
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation
+
+      = f.label :bio
+      (unnecessary)
+      = f.text_area :bio, placeholder: 'A little about you'
+
+      =f.submit 'Sign Up', class: 'enter'
+
+  %div
+    %p.text Previous user?
+    = form_tag(sessions_path) do
+      = label_tag :email
+      = text_field_tag :email, nil
+
+      = label_tag :password
+      = password_field_tag :password, nil
+      = submit_tag 'Sign In', class: 'enter'

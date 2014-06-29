@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'pg'
 gem 'authem'
 gem 'will_paginate', '~> 3.0'

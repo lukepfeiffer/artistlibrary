@@ -1,19 +1,21 @@
+!!!
 %head
-  %title Artistlibrary
   = stylesheet_link_tag    "application", media: "all"
-  = javascript_include_tag "application"
+  = javascript_include_tag "application", media: 'all'
   = csrf_meta_tags
-- if signed_in?
-  %div.header
-    %div.username
-      %ul
-        = link_to current_user.username, images_path, id: 'username_link'
-        = link_to 'Sign Out', sign_out_path, method: :delete, id: 'sign_out'
-      %ul.user_bio
-        = current_user.bio
-    %div.header_link
-      = link_to 'All Pictures', other_images_path, class: 'anchor', id: 'recent'
-      = link_to 'Add Picture', new_image_path, class: 'anchor', id: 'add'
+  %title
+    Artistlibrary
 
 %body#main
+  - if current_user.present?
+    %div.header
+      %div.username
+        %ul
+          = link_to current_user.username, images_path, id: 'username_link'
+          = link_to 'Sign Out', sign_out_path, method: :delete, id: 'sign_out'
+        %ul.user_bio
+          = current_user.bio
+      %div.header_link
+        = link_to 'All Pictures', other_images_path, class: 'anchor', id: 'recent'
+        = link_to 'Add Picture', new_image_path, class: 'anchor', id: 'add'
   = yield

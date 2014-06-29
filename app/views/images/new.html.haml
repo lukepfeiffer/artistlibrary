@@ -4,7 +4,7 @@
   = form_for(@image) do |f|
     = f.hidden_field :user_id, value: current_user.id
 
-    = f.label :url
+    = f.label :'image url'
     = f.text_area :url, placeholder: 'Image Url'
 
     = f.label :description

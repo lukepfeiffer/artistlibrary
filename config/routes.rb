@@ -4,7 +4,6 @@ Artistlibrary::Application.routes.draw do
 
   root 'pages#home'
 
-  get '/sign_up', to: 'pages#sign_up'
   get '/other_images', to: 'pages#other_images'
 
 

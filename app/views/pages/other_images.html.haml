@@ -6,8 +6,10 @@
 
   %p.p_text
     Recently Added Images:
-
-  - @image.each do |image|
+  - if @images.empty?
+    %p.p_text
+      No image matches search
+  - @images.each do |image|
     - if image.present?
       %div.view_image
         = image_tag image.url, class: 'image_url'
