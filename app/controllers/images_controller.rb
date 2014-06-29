@@ -3,7 +3,7 @@ class ImagesController < ApplicationController
     if params[:tag].present?
       @images = current_user.images.joins(:tags).where('tags.name = ?',  params[:tag]).paginate(page: params[:page], per_page: '12')
     else
-      @images = current_user.images.paginate(page: params[:page], per_page: '12')
+      @images = current_user.images.paginate(page: params[:page], order: 'created_at DESC', per_page: '12')
     end
   end
 

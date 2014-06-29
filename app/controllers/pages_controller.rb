@@ -10,7 +10,7 @@ class PagesController < ApplicationController
     if params[:tag].present?
       @image = Image.joins(:tags).where('tags.name = ?',  params[:tag]).paginate(page: params[:page], per_page: '12')
     else
-      @image = Image.find(:all, order: :id, limit: '12').reverse
+      @image = Image.find(:all, order: :id, limit: '12', order: 'created_at DESC').reverse
     end
   end
 end

@@ -7,7 +7,7 @@
 %div
   %p.p_text
     Your Pictures:
-  - @images.reverse_each do |image|
+  - @images.each do |image|
     - if image.present?
       %div.view_image
         = image_tag image.url, class: 'image_url'
