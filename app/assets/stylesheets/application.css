@@ -21,7 +21,7 @@
 
 .header_link{
   margin: 0 0 30px 0;
-  width: 203px;
+  width: 244px;
 }
 
 #username_link{
@@ -151,6 +151,7 @@ ul{
 .user_bio{
   color: #fff;
   font-weight: bold;
+  text-align: left;
 }
 
 .field_holder{
@@ -182,16 +183,17 @@ ul{
 }
 
 #add{
-  width: 83px;
+  color: #0cc431;
+  padding: 0 5px;
   float: left;
-  font-size: 13px;
-  border-radius: 3px;
-  background-color: #224bc7;
-  border: 1px solid #32cd32;
+  border: #0b3061;
+  font-size: 20px;
+  font-weight: normal;
+  background-color: #0b3061;
 }
 
 #add:hover{
-  background-color: #1b7fcc;
+  font-weight: bold;
 }
 
 #new_picture{
@@ -202,14 +204,16 @@ ul{
 }
 
 #recent{
-  background-color: #32cd32;
-  border-radius: 3px;
-  font-size: 12px;
-  padding: 11px;
+  color: #a207b0;
+  padding: 0 5px;
+  border: #0b3061;
+  font-size: 20px;
+  font-weight: normal;
+  background-color: #0b3061;
 }
 
 #recent:hover{
-  background-color: #2dcc70;
+  font-weight: bold;
 }
 
 #delete{
@@ -228,20 +232,13 @@ ul{
 }
 
 #sign_out{
-  color: #000;
-  border: none;
-  padding: 0 8px;
-  font-size: 15px;
-  border-radius: 2px;
-  background-color: #ccc;
-  border: 1px solid black;
-  text-decoration: underline;
+  color: #fff;
+  font-size: 17px;
 }
 
 #sign_out:hover{
-  color: #fff;
-  border: 1px solid #fff;
-  background-color: #c5c5c5;
+  font-weight: bold;
+  font-size:18px;
 }
 
 #search_bar{
