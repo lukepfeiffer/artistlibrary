@@ -1,6 +1,7 @@
 %div.search
-  = text_field_tag :tag, nil, placeholder: 'Search For Tags', id: 'search_bar'
-  = submit_tag 'Search', class: 'search_button'
+  = form_tag(images_path, method: :get) do
+    = text_field_tag :tag, nil, placeholder: 'Search For Tags', id: 'search_bar'
+    = submit_tag 'Search', class: 'search_button'
 
   %div
     %p.p_text
