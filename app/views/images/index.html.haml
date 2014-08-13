@@ -20,5 +20,5 @@
             Tags:
             - image.tags.each do |tag|
               %span.tag= link_to tag.name
-          = link_to 'Delete Image', image_path(image), method: :delete, class: 'anchor', id: 'delete'
+          = link_to 'Delete Image', image_path(image), method: :delete, confirm: 'Are You Sure?', class: 'anchor', id: 'delete'
 = will_paginate @images
