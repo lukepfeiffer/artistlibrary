@@ -16,6 +16,7 @@
       %div.header_link
         = link_to 'All Pictures', other_images_path, class: 'anchor', id: 'recent'
         = link_to 'Add Picture', new_image_path, class: 'anchor', id: 'add'
+        = link_to 'View Categories', categories_path, class: 'anchor', id: 'category_link'
       %ul.user_bio
         = current_user.bio
   = yield

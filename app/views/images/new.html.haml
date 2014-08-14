@@ -1,17 +1,18 @@
 %div.field_holder#new_picture
-  %span#add_picture
-    New Picture
   = form_for(@image) do |f|
     = f.hidden_field :user_id, value: current_user.id
 
-    = f.label :'image url'
-    = f.text_area :url, placeholder: 'Image Url'
+    %li
+      = f.label :'image url'
+      = f.text_area :url, placeholder: 'Image Url'
 
-    = f.label :description
-    (Not Necessary)
-    = f.text_area :description, placeholder: 'Image Description'
+    %li
+      = f.label :description
+      (Not Necessary)
+      = f.text_area :description, placeholder: 'Image Description'
 
-    = f.fields_for(:tags, @tags) do |ff|
-      = render 'tag_field', ff: ff
+    %li
+      = f.fields_for(:tags, @tags) do |ff|
+        = render 'tag_field', ff: ff
 
     = f.submit 'Add Image', class: 'enter'

@@ -14,7 +14,8 @@
 ActiveRecord::Schema.define(version: 20140813023528) do
 
   create_table "categories", force: true do |t|
-    t.string "category"
+    t.string  "category"
+    t.integer "user_id"
   end
 
   create_table "images", force: true do |t|

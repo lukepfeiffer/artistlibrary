@@ -1,6 +1,7 @@
 Artistlibrary::Application.routes.draw do
   resources :users
   resources :images
+  resources :categories
 
   root 'pages#home'
 

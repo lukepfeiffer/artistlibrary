@@ -32,7 +32,7 @@ class ImagesController < ApplicationController
     params.require(:image).permit(
       :url,
       :user_id,
-      :category,
+      :category_id,
       :description,
       tags_attributes: :name
     )
