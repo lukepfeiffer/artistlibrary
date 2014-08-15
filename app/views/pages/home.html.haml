@@ -16,24 +16,24 @@
   %p.text Sign Up Here
   %ul
     = form_for(@user) do |f|
-      %li.special_li
+      %li
         = f.label :email
-      %li.special_li
+      %li
         = f.text_field :email
 
-      %li.special_li
+      %li
         = f.label :username
-      %li.special_li
+      %li
         = f.text_field :username
 
-      %li.special_li
+      %li
         = f.label :password
-      %li.special_li
+      %li
         = f.password_field :password
 
-      %li.special_li
+      %li
         = f.label :password_confirmation
-      %li.special_li
+      %li
         = f.password_field :password_confirmation
 
       =f.submit 'Sign Up', class: 'enter'
@@ -41,14 +41,14 @@
   %div
     %p.text Previous user?
     = form_tag(sessions_path) do
-      %li.special_li
+      %li
         = label_tag :email
-      %li.special_li
+      %li
         = text_field_tag :email, nil
 
-      %li.special_li
+      %li
         = label_tag :password
-      %li.special_li
+      %li
         = password_field_tag :password, nil
-      %li.special_li
+      %li
         = submit_tag 'Sign In', class: 'enter'

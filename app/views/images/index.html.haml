@@ -3,22 +3,24 @@
     = text_field_tag :tag, nil, placeholder: 'Search For Tags', id: 'search_bar'
     = submit_tag 'Search', class: 'search_button'
 
-  %div
-    %p.p_text
-      Your Pictures:
-    - if @images.empty?
-      %p.p_text
-        You don't have any images
+%div.image_div
+  %p
+    Your Pictures:
+  - if @images.empty?
+    %p
+      You don't have any images
+
+  %table
     - @images.each do |image|
-      %div.view_image
+      %td
         = image_tag image.url, class: 'image_url'
-        %p
-          = link_to 'Full Size Image', image.url
-        %ul.description
-          = image.description
-          %p
-            Tags:
-            - image.tags.each do |tag|
-              %span.tag= link_to tag.name
-          = link_to 'Delete Image', image_path(image), method: :delete, confirm: 'Are You Sure?', class: 'anchor', id: 'delete'
+        %p#full_size
+          = link_to 'Full Size Image', image_path(image.id)
+        %ul
+          %li
+            %p#tags
+              Tags:
+              - image.tags.each do |tag|
+                %span= link_to tag.name
+            = link_to 'Delete Image', image_path(image), method: :delete, confirm: 'Are You Sure?', id: 'delete'
 = will_paginate @images

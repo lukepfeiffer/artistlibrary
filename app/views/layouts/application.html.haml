@@ -8,15 +8,13 @@
 
 %body#main
   - if current_user.present?
-    %div.header
-      %div.username
-        %ul
-          = link_to current_user.username, images_path, id: 'username_link'
-          = link_to 'Sign Out', sign_out_path, method: :delete, id: 'sign_out'
-      %div.header_link
-        = link_to 'All Pictures', other_images_path, class: 'anchor', id: 'recent'
-        = link_to 'Add Picture', new_image_path, class: 'anchor', id: 'add'
-        = link_to 'View Categories', categories_path, class: 'anchor', id: 'category_link'
-      %ul.user_bio
-        = current_user.bio
+    %ul.layout_ul
+      %li
+        %span#username_link
+          = current_user.username
+        = link_to 'Sign Out', sign_out_path, method: :delete, id: 'sign_out'
+      %li
+        = link_to 'All Pictures', other_images_path, class: 'anchor', class: 'header_links'
+        = link_to 'Add Picture', new_image_path, class: 'anchor', class: 'header_links'
+        = link_to 'View Categories', categories_path, class: 'anchor', class: 'header_links'
   = yield
