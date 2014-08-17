@@ -4,6 +4,14 @@
   margin: 0;
 }
 
+h1{
+  margin: 8px 0 8px 3px;
+}
+
+textarea{
+  width: 250px;
+  height: 50px;
+}
 
 input{
   width: 250px;
@@ -19,6 +27,10 @@ ul{
 
 li{
   list-style-type: none;
+}
+
+.field_holder .enter{
+  width: 120px;
 }
 
 .image_div{
@@ -46,8 +58,29 @@ li{
   margin: 3px 6px;
 }
 
+.image_tag{
+  margin: 0 0 4px 0;
+}
+
 .header_links{
   margin: 0 4px;
+}
+
+.text_for_new_image{
+  font-size: 26px;
+  margin: 4px 0 8px 0;
+}
+
+#title{
+  color: #000;
+  font-size: 33px;
+  text-decoration: none;
+  margin: 3px 0 8px 3px;
+}
+
+#title:hover{
+  font-size: 34px;
+  text-decoration: underline;
 }
 
 #username_link{
@@ -80,6 +113,11 @@ li{
 #tags{
   margin: 4px 0;
   font-size: 14px;
+}
+
+#new_picture{
+  float: left;
+  margin: 0 0 0 15px;
 }
 
 .enter{

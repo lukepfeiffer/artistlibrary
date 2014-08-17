@@ -1,23 +1,47 @@
-%div
-  = form_tag(other_images_path, method: :get) do
-    %span#search
+-# %div
+-#   = form_tag(other_images_path, method: :get) do
+-#     %span#search
+-#     = text_field_tag :tag, nil, placeholder: 'Search For Tags', id: 'search_bar'
+-#     = submit_tag 'Search', class: 'search_button'
+
+-#   %p.p_text
+-#     Recently Added Images:
+-#   - if @images.empty?
+-#     %p.p_text
+-#       No image matches search
+-#   - @images.each do |image|
+-#     - if image.present?
+-#       %div.view_image
+-#         = image_tag image.url, class: 'image_url'
+-#         %p
+-#           = link_to 'Full Size Image', image.url
+-#         %ul.description
+-#           = image.description
+-#           %p
+-#             tags:
+-#             - image.tags.each do |tag|
+-#               %span.tag= tag.name
+%div.search
+  = form_tag(images_path, method: :get) do
     = text_field_tag :tag, nil, placeholder: 'Search For Tags', id: 'search_bar'
     = submit_tag 'Search', class: 'search_button'
 
-  %p.p_text
-    Recently Added Images:
+%div.image_div
+  %p
+    Your Pictures:
   - if @images.empty?
-    %p.p_text
-      No image matches search
-  - @images.each do |image|
-    - if image.present?
-      %div.view_image
+    %p
+      You don't have any images
+
+  %table
+    - @images.each do |image|
+      %td
         = image_tag image.url, class: 'image_url'
-        %p
-          = link_to 'Full Size Image', image.url
-        %ul.description
-          = image.description
-          %p
-            tags:
-            - image.tags.each do |tag|
-              %span.tag= tag.name
+        %p#full_size
+          = link_to 'Full Size Image', image_path(image.id)
+        %ul
+          %li
+            %p#tags
+              Tags:
+              - image.tags.each do |tag|
+                %span= link_to tag.name
