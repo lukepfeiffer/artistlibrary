@@ -1,1 +1,6 @@
-%h1 junk
+%h1#category_text
+  Categories
+%div.categories
+  %li= link_to 'Create Category', new_category_path, class: 'create_category'
+  - @category.each do |cat|
+    = link_to cat.category, category_path(cat.id), class: 'categories_link'

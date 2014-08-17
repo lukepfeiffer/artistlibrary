@@ -29,6 +29,10 @@ li{
   list-style-type: none;
 }
 
+.categories{
+  margin: 0 0 0 6px;
+}
+
 .field_holder .enter{
   width: 120px;
 }
@@ -37,11 +41,14 @@ li{
   float: left;
 }
 
+.categories_link{
+  margin: 0 0 0 5px;
+}
+
 .image_div p{
   font-size: 25px;
   margin: 7px 4px 4px 4px;
 }
-
 
 .image_div td{
   width: 200px;
@@ -140,4 +147,13 @@ li{
 .field_holder{
   float: right;
   width: 600px;
+}
+
+#new_category{
+  float: left;
+  margin: 10px 0 4px 8px;
+}
+
+#category_submit{
+  width: 150px;
 }

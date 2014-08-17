@@ -1,0 +1,7 @@
+%div.field_holder#new_category
+  = form_for(@category) do |f|
+    = f.hidden_field :user_id, value: current_user.id
+
+    %li= f.label :category
+    %li= f.text_field :category
+    %li= f.submit 'New Category', class: 'enter', id: 'category_submit'
