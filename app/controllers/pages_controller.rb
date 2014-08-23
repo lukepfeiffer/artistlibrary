@@ -10,4 +10,5 @@ class PagesController < ApplicationController
       @images = Image.find(:all, order: :id, limit: '12', order: 'created_at DESC')
     end
   end
+
 end

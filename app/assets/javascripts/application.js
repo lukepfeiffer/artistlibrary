@@ -14,3 +14,10 @@
 //= require jquery_ujs
 //= require_tree .
 //= require jquery_nested_form
+//
+
+$(function(){
+  $('.auto_complete').autocomplete({
+		source: categories
+   })
+})

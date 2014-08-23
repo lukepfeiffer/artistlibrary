@@ -3,6 +3,10 @@
     = text_field_tag :tag, nil, placeholder: 'Search For Tags', id: 'search_bar'
     = submit_tag 'Search', class: 'search_button'
 
+%div.categories
+  - current_user.categories.each do |cat|
+    = link_to cat.name, category_path(cat.id, category: cat.name), class: 'categories_link'
+
 %div.image_div
   %p
     Your Pictures:

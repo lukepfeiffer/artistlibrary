@@ -1,10 +1,11 @@
 class ImagesController < ApplicationController
   def index
-    if params[:tag].present?
-      @images = current_user.images.joins(:tags).where('tags.name = ?',  params[:tag]).paginate(page: params[:page], per_page: '12')
-    else
-      @images = current_user.images.paginate(page: params[:page], order: 'created_at DESC', per_page: '12')
-    end
+    @images = images.by_tag(tag).by_category(category)
+    .paginate(
+      page: page,
+      order: 'created_at DESC',
+      per_page: '12')
+    @category = Category.all
   end
 
   def show
@@ -12,6 +13,7 @@ class ImagesController < ApplicationController
   end
 
   def new
+    @categories = Image.pluck(:category_name).to_json
     @image = Image.new
     3.times do
       @image.tags.build
@@ -32,11 +34,29 @@ class ImagesController < ApplicationController
     redirect_to images_path
   end
 
+  private
+
+  def images
+    current_user.images
+  end
+
+  def category
+    params[:category]
+  end
+
+  def tag
+    params[:tag]
+  end
+
+  def page
+    params[:page]
+  end
+
   def image_params
     params.require(:image).permit(
       :url,
       :user_id,
-      :category_id,
+      :category_name,
       :description,
       tags_attributes: :name
     )

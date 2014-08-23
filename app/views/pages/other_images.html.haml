@@ -45,3 +45,4 @@
               Tags:
               - image.tags.each do |tag|
                 %span= link_to tag.name
+            -# = link_to 'Delete Image', image_path(image), mehod: :delete, confirm: 'Are You Sure?', id: 'delete' if image.user_id.match current_user.id

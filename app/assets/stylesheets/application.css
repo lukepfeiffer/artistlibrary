@@ -144,6 +144,18 @@ li{
   float: left;
 }
 
+.pagination{
+  color: #000;
+}
+
+.pagination a{
+  color: #827ce8;
+}
+
+.pagination a:hover{
+  font-weight: bold;
+}
+
 .field_holder{
   float: right;
   width: 600px;

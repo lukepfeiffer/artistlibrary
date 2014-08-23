@@ -3,10 +3,11 @@
   = form_for(@image) do |f|
     = f.hidden_field :user_id, value: current_user.id
 
-    %li
-      = f.label :'image url'
-    %li
-      = f.text_area :url, placeholder: 'Image Url'
+    %li= f.label :'image url'
+    %li= f.text_area :url, placeholder: 'Image Url'
+
+    %li= f.label :Category
+    %li= f.text_field :category_name, class: 'auto_complete'
 
     %li
       = f.fields_for(:tags, @tags) do |ff|
