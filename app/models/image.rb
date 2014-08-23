@@ -5,11 +5,15 @@ class Image < ActiveRecord::Base
   accepts_nested_attributes_for :tags
 
   scope :by_tag, ->(field="") do
-    joins(:tags).where('tags.name = ?', field)
+    if field.present?
+      joins(:tags).where('tags.name = ?', field)
+    end
   end
 
   scope :by_category, ->(field="") do
-    where(category_name: field)
+    if field.present?
+      where(category_name: field)
+    end
   end
 
 end

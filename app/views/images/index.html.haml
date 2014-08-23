@@ -4,15 +4,15 @@
     = submit_tag 'Search', class: 'search_button'
 
 %div.categories
-  - current_user.categories.each do |cat|
-    = link_to cat.name, category_path(cat.id, category: cat.name), class: 'categories_link'
+  - current_user.images.pluck(:category_name).uniq.each do |category_name|
+    = link_to category_name, images_path(category: category_name), class: 'categories_link'
 
 %div.image_div
-  %p
-    Your Pictures:
-  - if @images.empty?
-    %p
-      You don't have any images
+  -# %p
+  -#   Your Pictures:
+  -# - if @images.empty?
+  -#   %p
+  -#     You don't have any images
 
   %table
     - @images.each do |image|
@@ -23,8 +23,12 @@
         %ul
           %li
             %p#tags
+              Category:
+              %span= image.category_name
+          %li
+            %p#tags
               Tags:
               - image.tags.each do |tag|
-                %span= link_to tag.name
+                %span= tag.name
             = link_to 'Delete Image', image_path(image), method: :delete, confirm: 'Are You Sure?', id: 'delete'
 = will_paginate @images
