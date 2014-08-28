@@ -4,6 +4,15 @@
   margin: 0;
 }
 
+#header{
+  padding: 0 0 10px 0;
+  background-color: #1914a6;
+}
+
+#header h1{
+  margin: 0 0 0 3px;
+}
+
 table{
   width: 1200px;
 }
@@ -59,7 +68,7 @@ li{
 }
 
 .categories{
-  margin: 0 0 0 6px;
+  margin: 10px 0 0 6px;
 }
 
 .field_holder .enter{
@@ -98,8 +107,14 @@ li{
   margin: 0 0 4px 0;
 }
 
-.header_links{
+#headerlink a{
+  color: black;
   margin: 0 4px;
+  font-size: 16px;
+}
+
+#headerlink a:hover{
+  font-weight: bold;
 }
 
 .text_for_new_image{
@@ -114,18 +129,13 @@ li{
   margin: 3px 0 8px 3px;
 }
 
-#title:hover{
+#title a:hover{
   font-size: 34px;
-  text-decoration: underline;
 }
 
 #username_link{
   font-size: 24px;
-  color: #079cba;
-}
-
-#sign_out{
-  color: #145bde;
+  color: #13ad18;
 }
 
 #delete{
@@ -188,6 +198,18 @@ li{
 .field_holder{
   float: right;
   width: 600px;
+}
+
+.search{
+  margin: 0 0 0 3px;
+}
+
+.search_button{
+  height: 28px;
+  width: 95px;
+  font-size: 18px;
+  border-radius: 6px;
+  background-color: #f7d84a;
 }
 
 #new_category{

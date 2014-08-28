@@ -3,11 +3,11 @@
     = text_field_tag :tag, nil, placeholder: 'Search For Tags', id: 'search_bar'
     = submit_tag 'Search', class: 'search_button'
 
-%div.categories
-  - current_user.images.pluck(:category_name).uniq.each do |category_name|
-    = link_to category_name, images_path(category: category_name), class: 'categories_link'
-
 %div.image_div
+  %div.categories
+    - current_user.images.pluck(:category_name).uniq.each do |category_name|
+      = link_to category_name, images_path(category: category_name), class: 'categories_link'
+
   %p
     Your Pictures:
   - if @images.empty?

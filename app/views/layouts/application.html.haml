@@ -9,14 +9,17 @@
     Artistlibrary
 
 %body#main
-  %h1= link_to 'ArtistLibrary', images_path, id: 'title'
-  - if current_user.present?
-    %ul.layout_ul
-      %li
-        %span#username_link
-          = current_user.username
-      %li
-        = link_to 'All Pictures', other_images_path, class: 'anchor', class: 'header_links'
-        = link_to 'Add Picture', new_image_path, class: 'anchor', class: 'header_links'
-        = link_to 'Sign Out', sign_out_path, method: :delete, id: 'sign_out'
-  = yield
+  %div#header
+    - if current_user.present?
+      %h1= link_to 'ArtistLibrary', images_path, id: 'title'
+    - else
+      %h1#title ArtistLibrary
+    - if current_user.present?
+      %ul.layout_ul
+        %li
+          %span#username_link
+            = current_user.username
+          %span#headerlink
+            = link_to 'Add Picture', new_image_path
+            = link_to 'Sign Out', sign_out_path, method: :delete, id: 'sign_out'
+    = yield
