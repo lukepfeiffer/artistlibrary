@@ -4,7 +4,7 @@ class ImagesController < ApplicationController
     .paginate(
       page: page,
       order: 'created_at DESC',
-      per_page: '12')
+      per_page: '15')
   end
 
   def show
@@ -12,7 +12,7 @@ class ImagesController < ApplicationController
   end
 
   def new
-    @categories = Image.pluck(:category_name).uniq.to_json
+    @categories = Image.pluck(:category_name).to_json
     @image = Image.new
     3.times do
       @image.tags.build
@@ -56,6 +56,7 @@ class ImagesController < ApplicationController
       :url,
       :user_id,
       :category_name,
+      :category_id,
       :description,
       tags_attributes: :name
     )

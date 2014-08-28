@@ -4,6 +4,14 @@
   margin: 0;
 }
 
+table{
+  width: 1200px;
+}
+
+td{
+  float: left;
+}
+
 h1{
   margin: 8px 0 8px 3px;
 }
@@ -29,6 +37,27 @@ li{
   list-style-type: none;
 }
 
+.left_ul{
+  float: left;
+}
+
+.right_ul{
+  float: right;
+}
+
+.show_div{
+  width: 70%;
+}
+
+.show_div img{
+  width: 50%;
+  height: 50%;
+}
+
+.show_div #category{
+  font-size: 20px;
+}
+
 .categories{
   margin: 0 0 0 6px;
 }
@@ -52,8 +81,8 @@ li{
 
 .image_div td{
   width: 200px;
-  height: 300px;
-  margin: 10px 25px;
+  height: 250px;
+  margin: 0px 4px;
 }
 
 .image_div img{

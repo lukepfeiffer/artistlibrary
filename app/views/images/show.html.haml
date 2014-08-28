@@ -1,6 +1,8 @@
 %div.show_div
-  %ul
-    %li
-      = image_tag @image.url
-    %li
-      = link_to 'Return to images', images_path
+  %ul.left_ul
+    %li= image_tag @image.url, class: 'full_size_image'
+  %ul.right_ul
+    %li= link_to 'Return to images', images_path
+    %li#category
+      Categories:
+      = @image.category_name

@@ -8,11 +8,11 @@
     = link_to category_name, images_path(category: category_name), class: 'categories_link'
 
 %div.image_div
-  -# %p
-  -#   Your Pictures:
-  -# - if @images.empty?
-  -#   %p
-  -#     You don't have any images
+  %p
+    Your Pictures:
+  - if @images.empty?
+    %p
+      You don't have any images
 
   %table
     - @images.each do |image|

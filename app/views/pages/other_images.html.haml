@@ -1,26 +1,3 @@
--# %div
--#   = form_tag(other_images_path, method: :get) do
--#     %span#search
--#     = text_field_tag :tag, nil, placeholder: 'Search For Tags', id: 'search_bar'
--#     = submit_tag 'Search', class: 'search_button'
-
--#   %p.p_text
--#     Recently Added Images:
--#   - if @images.empty?
--#     %p.p_text
--#       No image matches search
--#   - @images.each do |image|
--#     - if image.present?
--#       %div.view_image
--#         = image_tag image.url, class: 'image_url'
--#         %p
--#           = link_to 'Full Size Image', image.url
--#         %ul.description
--#           = image.description
--#           %p
--#             tags:
--#             - image.tags.each do |tag|
--#               %span.tag= tag.name
 %div.search
   = form_tag(images_path, method: :get) do
     = text_field_tag :tag, nil, placeholder: 'Search For Tags', id: 'search_bar'
@@ -44,5 +21,4 @@
             %p#tags
               Tags:
               - image.tags.each do |tag|
-                %span= link_to tag.name
-            -# = link_to 'Delete Image', image_path(image), mehod: :delete, confirm: 'Are You Sure?', id: 'delete' if image.user_id.match current_user.id
+                %span= tag.name
