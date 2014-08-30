@@ -17,6 +17,7 @@ group :doc do
 end
 
 group :development, :test do
+  gem 'livereload'
   gem 'pry-rails'
   gem 'sqlite3'
 end

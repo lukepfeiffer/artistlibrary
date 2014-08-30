@@ -20,6 +20,6 @@
           %span#username_link
             = current_user.username
           %span#headerlink
-            = link_to 'Add Picture', new_image_path
+            = link_to 'Add Picture', new_image_path, id: 'add'
             = link_to 'Sign Out', sign_out_path, method: :delete, id: 'sign_out'
     = yield
